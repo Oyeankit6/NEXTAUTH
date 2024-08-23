@@ -27,7 +27,7 @@ const Login = () => {
 
     try {
       setloading(true);
-      let Response = await fetch("http://localhost:3000/api/users/signup", {
+      let Response = await fetch("/api/users/signup", {
         method: "POST",
         body: JSON.stringify(userDetails),
       });
@@ -48,7 +48,7 @@ const Login = () => {
     console.log(LoginDetails);
     try {
       setloading(true);
-      let Response = await fetch("http://localhost:3000/api/users/login", {
+      let Response = await fetch("/api/users/login", {
         method: "POST",
         body: JSON.stringify(LoginDetails),
       });
