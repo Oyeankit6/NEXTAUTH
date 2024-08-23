@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 const Admin = () => {
   const router = useRouter();
   const handlelogout = async () => {
-    let res = await fetch("http://localhost:3000/api/users/logout");
+    let res = await fetch("/api/users/logout");
     router.push("/login");
   };
 
