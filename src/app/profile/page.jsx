@@ -1,11 +1,14 @@
 "use client";
-import { useRouter } from "next/navigation";
-import React from "react";
 
-const page = () => {
+import React from "react";
+import { useRouter } from "next/navigation";
+function Page() {
   const router = useRouter();
   const handleLogOut = async () => {
-    let res = await fetch("http://localhost:3000/api/users/logout");
+    let res = await fetch("http://localhost:3000/api/users/logout", {
+      method: "GET",
+    });
+
     router.push("/login");
   };
   return (
@@ -14,6 +17,6 @@ const page = () => {
       <button onClick={handleLogOut}>Log out</button>
     </div>
   );
-};
+}
 
-export default page;
+export default Page;
